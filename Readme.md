@@ -1,7 +1,7 @@
 # Личный проект «Девайс»
 
 * Студент: [Mikhail Poylov](https://up.htmlacademy.ru/htmlcss/37/user/2354265).
-* Наставник: `Неизвестно`.
+* Наставник: [Сергей Остаповец](https://up.htmlacademy.ru/htmlcss/37/user/288419).
 
 ---
 
