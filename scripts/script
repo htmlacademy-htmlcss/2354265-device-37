@@ -1,0 +1,8 @@
+      document.querySelector('.open-modal').addEventListener('click', ()=> {
+        document.querySelector('.modal-container').classList.remove('visually-hidden');
+      });
+
+
+     document.querySelector('.modal-closed-button').addEventListener('click', ()=> {
+        document.querySelector('.modal-container').classList.add('visually-hidden');
+      });
