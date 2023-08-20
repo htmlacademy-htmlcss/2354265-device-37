@@ -1,8 +1,43 @@
       document.querySelector('.open-modal').addEventListener('click', ()=> {
-        document.querySelector('.modal-container').classList.remove('visually-hidden');
+        document.querySelector('.modal-container').style.display = "flex";
       });
 
 
      document.querySelector('.modal-closed-button').addEventListener('click', ()=> {
-        document.querySelector('.modal-container').classList.add('visually-hidden');
+        document.querySelector('.modal-container').style.display = "none";
       });
+
+
+
+      document.querySelector('.button-open-catalog').addEventListener('click', ()=> {
+        document.querySelector('.catalog-list').style.display = "flex";
+      });
+
+
+     document.querySelector('.button-closed-catalog').addEventListener('click', ()=> {
+        document.querySelector('.catalog-list').style.display = "none";
+      });
+
+    /*
+      let catalog = querySelector('catalog-list')
+
+      function openbox(catalog){
+        display = document.getElementById(catalog).style.display;
+
+        if(display=='none'){
+           document.getElementById(catalog).style.display='block';
+        }else{
+           document.getElementById(catalog).style.display='none';
+        }
+    }
+    */
+
+      let button = document.getElementById("button");
+          button.onclick = button_click;
+
+      function button_click() {
+        let myDetails = document.getElementById("list");
+        myDetails.open = !myDetails.open;
+        button.textContent = button.textContent === "Открыть" ? "Закрыть" : "Открыть";
+      }
+

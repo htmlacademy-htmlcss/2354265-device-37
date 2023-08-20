@@ -64,62 +64,67 @@
 
         <nav class="catalog-navigation">
           <div class="wrapper-catalog">
-            <span>
+
+            <span class="">
               Каталог товаров
             </span>
-            <button type="button">
+            <button class="button-open-catalog" type="button" id="button">
               <span class="visually-hidden">
-                Открыть Каталог
+                  Открыть Каталог
               </span>
             </button>
-            <!--
+            <button class="button-closed-catalog" type="button">
+              <span class="visually-hidden">
+                Закрыть Каталог
+              </span>
+            </button>
+
               <div class="catalog-list">
 
-                  <ul class="camera-list">
-                    <li class="camera-list-item">
-                      <a href="#">
-                        Виртуальная реальность
-                      </a>
-                      </li>
-                    <li class="camera-list-item">
-                      <a href="catalog.html">
-                        Моноподы для селфи
-                      </a>
-                    </li>
-                    <li class="camera-list-item">
-                      <a href="#">
-                        Экшн-камеры
-                      </a>
-                    </li>
-                  </ul>
-
-                  <ul class="watch-list">
-
-                    <li class="watch-list-item">
-                      <a href="#">
-                        Фитнес-браслеты
-                      </a>
-                    </li>
-                    <li  class="watch-list-item">
-                      <a href="#">
-                      Умные часы
+                <ul class="camera-list">
+                  <li class="camera-list-item">
+                    <a href="#">
+                      Виртуальная реальность
                     </a>
                     </li>
+                  <li class="camera-list-item">
+                    <a href="catalog.html">
+                      Моноподы для селфи
+                    </a>
+                  </li>
+                  <li class="camera-list-item">
+                    <a href="#">
+                      Экшн-камеры
+                    </a>
+                  </li>
+                </ul>
 
-                  </ul>
+                <ul class="watch-list">
 
-                  <ul class="quadrocopter-list">
+                  <li class="watch-list-item">
+                    <a href="#">
+                      Фитнес-браслеты
+                    </a>
+                  </li>
+                  <li  class="watch-list-item">
+                    <a href="#">
+                    Умные часы
+                  </a>
+                  </li>
 
-                    <li class="">
-                      <a href="#">
-                        Квадрокоптеры
-                      </a>
-                    </li>
+                </ul>
 
-                  </ul>
+                <ul class="quadrocopter-list">
 
-              </div>
-              -->
+                  <li class="">
+                    <a href="#">
+                      Квадрокоптеры
+                    </a>
+                  </li>
+
+                </ul>
+
+            </div>
           </div>
 
           <ul class="catalog-navigation-list">
@@ -450,21 +455,21 @@
 
           <div class="container-button">
 
-            <button class="services-button delivery-button button-style services-button-active" type="button">
+            <button class="services-button delivery-button button-style pointer services-button-active" type="button">
               Доставка
             </button>
-            <button class="services-button guarantee-button button-style" type="button">
+            <button class="services-button guarantee-button button-style pointer" type="button">
               Гарантия
             </button>
-            <button class="services-button credit-button button-style" type="button">
+            <button class="services-button credit-button button-style pointer" type="button">
               Кредит
             </button>
 
           </div>
 
-          <div>
+          <div class="wrapper-services-text">
 
-            <div class="services delivery services-active">
+            <div class="services-images delivery services-active">
 
               <div class="services-text" >
                 <h3 class="services-title">
@@ -477,7 +482,7 @@
 
             </div>
 
-            <div class="services guarantee services-disabled">
+            <div class="services-images guarantee services-disabled">
               <div class="services-text">
                 <h3 class="services-title">
                   Гарантия
@@ -489,7 +494,7 @@
             </div>
 
 
-            <div class="services credit services-disabled">
+            <div class="services-images credit services-disabled">
 
               <div class="services-text">
                 <h3 class="services-title">
@@ -524,7 +529,7 @@
           </span>
         </button>
         <div class="modal-link-container">
-          <a class="button-modal-link">
+          <a class="button-modal-link" href="modal.html">
             i
           </a>
         </div>
@@ -753,7 +758,7 @@
 
     </footer>
 
-    <div class="modal-container visually-hidden">
+    <div class="modal-container">
 
       <div class="modal">
         <button class="modal-closed-button pointer" type="button">
@@ -806,7 +811,7 @@
                     </span>
                     <span class="tooltip">
                       <button class="tooltip-toggle" type="button" aria-labelledby="baggage">
-
+                        i
                       </button>
                       <span class="tooltip-text" role="tooltip" id="baggage">
                         Постараемся найти, сколько нужно. Привезём сколько получится по требованиям к провозу багажа.

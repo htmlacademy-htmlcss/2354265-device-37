@@ -154,322 +154,88 @@
 
     </header>
 
-    <main>
+    <main class="modal-inner">
 
-      <section class="catalog-header">
+          <section class="modal-content">
 
-        <h1 class="catalog-header-title">
-          Моноподы для селфи
-        </h1>
+            <h2 class="modal-title">
+              Доставка под заказ
+            </h2>
 
-        <ul class="breadcrumbs-list">
-          <li class="breadcrumbs-list-item">
-            <a class="breadcrumbs-list-link" href="index.html">
-              Главная
-            </a>
-          </li>
-          <li class="breadcrumbs-list-item">
-            <a class="breadcrumbs-list-link" href="#">
-              Каталог товаров
-            </a>
-          </li>
-          <li  class="breadcrumbs-list-item">
-            <a class="breadcrumbs-list-link" href="#">
-              Моноподы для селфи
-            </a>
-          </li>
-        </ul>
+            <form class="delivery-data">
 
-      </section>
+              <div class="wrapper-delivery">
 
-      <div class="wrapper-catalog-inner">
-        <section class="container-catalog">  <!--Контейнер для основного поля каталога-->
+                <label class="delivery-data-item name">
+                  <span class="delivery-data-subtitle">
+                    Ваше имя:
+                  </span>
+                  <input class="delivery-data-input style-outline" placeholder="Введите имя" name="name" type="text">
+                  <span class="" style="display: none;">
+                    Добавьте имя
+                  </span>
+                </label>
 
-          <aside class="filter">
-            <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="post">
+                <label class="delivery-data-item e-mail">
+                  <span class="delivery-data-subtitle">
+                    Ваш e-mail:
+                  </span>
+                  <input class="delivery-data-input style-outline" placeholder="почта" name="e-mail" type="email">
+                  <span class="error" style="display: none;">
+                    Забавный у вас адрес
+                  </span>
+                </label>
 
-              <h2 class="catalog-title catalog-title-style">
-                фильтр:
-              </h2>
+              </div>
 
-              <!-- Форма стоимости -->
-              <fieldset class="catalog-filter-group">
+              <div class="wrapper-need-deliver">
 
-                <legend class="catalog-filter-title">
-                  Стоимость
-                </legend>
+                <label class="delivery-data-item need-deliver">
+                  <span class="delivery-data-subtitle">
+                    Что нужно привезти:
+                  </span>
+                  <input class="need-deliver-input style-outline" placeholder="В свободной форме" name="need-deliver" type="text">
+                </label>
 
-                <div class="range-wrapper-inputs">
-                  <label class="catalog-filter-label">
-                    <span class="filter-start">
-                      от
-                    </span>
-                    <input class="range-input left" type="number" value="0" name="min-price">
-                  </label>
-                  <label class="catalog-filter-label">
-                    <span class="filter-end">
-                      до
-                    </span>
-                    <input class="range-input right" type="number" value="5000" name="max-price" style="width: 143px">
-                  </label>
-                </div>
+                <div class="">
 
-                <div class="range">
-                  <div class="range-scale">
-                    <div class="range-bar" style="left: 0; width: 220px">
-                      <button class="range-toggle toggle-min" type="button">
-                        <span class="visually-hidden">
-                          Изменить минимальную цену.
+                  <div class="number-deliver delivery-data-item">
+                    <label class="">
+                      <span class="delivery-data-subtitle">
+                        Количество:
+                      </span>
+                      <span class="tooltip">
+                        <button class="tooltip-toggle" type="button" aria-labelledby="baggage">
+                          i
+                        </button>
+                        <span class="tooltip-text" role="tooltip" id="baggage">
+                          Постараемся найти, сколько нужно. Привезём сколько получится по требованиям к провозу багажа.
                         </span>
+                      </span>
+                    </label>
+
+                    <div class="need-deliver-value">
+                      <button class="need-deliver-value-button" type="button">
+
                       </button>
-                      <button class="range-toggle toggle-max" type="button">
-                        <span class="visually-hidden">
-                          Изменить максимальную цену.
-                        </span>
+                      <input type="number" value="1" class="quantity" name="order-value">
+                      <button class="need-deliver-value-button" type="button">
+
                       </button>
                     </div>
                   </div>
+
                 </div>
 
-              </fieldset>
+              </div>
 
-              <!-- Форма выбора цвета -->
-
-              <fieldset class="catalog-filter-group">
-
-                <legend class="catalog-filter-title">
-                  Цвет
-                </legend>
-
-                <ul class="filter-list filter-list-checkbox">
-                  <li>
-                    <label class="control">
-                      <input class="visually-hidden control-input" type="checkbox" name="black" checked>
-                      <span class="control-mark"></span>
-                      <span>Черный</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label class="control">
-                      <input class="visually-hidden control-input" type="checkbox" name="white" checked>
-                      <span class="control-mark"></span>
-                      <span>Белый</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label class="control">
-                      <input class="visually-hidden control-input" type="checkbox" name="blue">
-                      <span class="control-mark"></span>
-                      <span>Синий</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label class="control">
-                      <input class="visually-hidden control-input" type="checkbox" name="red">
-                      <span class="control-mark"></span>
-                      <span>Красный</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label class="control">
-                      <input class="visually-hidden control-input" type="checkbox" name="pink">
-                      <span class="control-mark"></span>
-                      <span>Розовый</span>
-                    </label>
-                  </li>
-                </ul>
-
-              </fieldset>
-
-              <!-- Форма с наличие Bluetooth -->
-              <fieldset class="catalog-filter-group">
-
-                <legend class="catalog-filter-title">
-                  Bluetooth
-                </legend>
-
-                <ul class="filter-list filter-list-radio">
-                  <li>
-                    <label class="control">
-                      <input class="visually-hidden control-input" type="radio" name="Bluetooth" value="yes" checked>
-                      <span class="control-mark"></span>
-                      Есть
-                    </label>
-                  </li>
-                  <li>
-                    <label class="control">
-                      <input class="visually-hidden control-input" type="radio" name="Bluetooth" value="no">
-                      <span class="control-mark"></span>
-                      Нет
-                    </label>
-                  </li>
-                </ul>
-
-              </fieldset>
-
-              <!-- Кнопка формы -->
-              <button class="button-show button-style" type="submit">
-                Показать
+              <button class="button-delivery-data button-style pointer" type="button">
+                Отправить
               </button>
 
             </form>
-          </aside>
 
-          <div class="container-item"> <!--Контейнер для поля сортировки предметов каталога кнопки и пагинации-->
-
-            <div class="container-sorting"> <!--Контейнер для сортировки-->
-
-              <h2 class="catalog-title sorting-title">
-                Сортировка
-              </h2>
-
-              <select class="select-control" aria-label="Сортировка">
-                <option value="popular">
-                  Популярные
-                </option>
-                <option value="not-popular">
-                  Не очень популярные
-                </option>
-                <option value="not-at-all-popular">
-                  Совсем не популярные
-                </option>
-              </select>
-
-              <div class="container-button-catalog">
-                <button class="sort-button-up" type="button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none">
-                    <path d="M6 0L11.5 10H0.5" fill="black"/>
-                  </svg>
-                  <span class="visually-hidden">
-                    Кнопка вверх.
-                  </span>
-                </button>
-
-                <button class="sort-button-down" type="button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="none">
-                    <path d="M6 0L11.5 10H0.5" fill="black"/>
-                  </svg>
-                  <span class="visually-hidden">
-                    Кнопка вниз.
-                  </span>
-                </button>
-
-              </div>
-
-            </div>
-
-            <div class="wrapper-self-catalog">
-
-              <section class="catalog-items"> <!--Предметы каталога-->
-
-                <ul class="catalog-list-inner">
-                  <li class="catalog-list-item">
-                    <h3 class="visually-hidden">
-                      Любительская селфи-палка
-                    </h3>
-                    <div class="wrapper-catalog-images">
-                      <img src="images/catalog/amateur-stick.jpg" width="360" height="380" alt="Любительская селфи-палка.">
-                    </div>
-                    <div class="container-price">
-                      <p class="item-name">
-                        Любительская<br> селфи-палка
-                      </p>
-                      <p class="item-price">
-                        500 ₽
-                      </p>
-                    </div>
-                  </li>
-                  <li class="catalog-list-item">
-                    <h3 class="visually-hidden">
-                      Профессиональная селфи-палка
-                    </h3>
-                    <div class="wrapper-catalog-images">
-                      <img src="images/catalog/professional-stick.jpg" width="360" height="380" alt="Профессиональная селфи-палка.">
-                    </div>
-                    <div class="container-price">
-                      <p class="item-name">
-                        Профессиональная<br> селфи-палка
-                      </p>
-                      <p class="item-price">
-                        1 500 ₽
-                      </p>
-                    </div>
-                  </li>
-                  <li class="catalog-list-item">
-                    <h3 class="visually-hidden">
-                      Непотопляемая селфи-палка
-                    </h3>
-                    <div class="wrapper-catalog-images">
-                      <img src="images/catalog/water-stick.jpg" width="360" height="380" alt="Непотопляемая селфи-палка.">
-                    </div>
-                    <div class="container-price">
-                      <p class="item-name">
-                        Непотопляемая<br> селфи-палка
-                      </p>
-                      <p class="item-price">
-                        2 500 ₽
-                      </p>
-                    </div>
-                  </li>
-                  <li class="catalog-list-item">
-                    <h3 class="visually-hidden">
-                      Селфи-палка «Следуй за мной»
-                    </h3>
-                    <div class="wrapper-catalog-images">
-                      <img src="images/catalog/hand-stick.jpg" width="360" height="380" alt="Селфи-палка рука. «Следуй за мной».">
-                    </div>
-                    <div class="container-price">
-                      <p class="item-name">
-                        Селфи-палка «Следуй<br> за мной»
-                      </p>
-                      <p class="item-price">
-                        1 500 ₽
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-
-              </section>
-
-              <button class="button-more" type="button">
-                Загрузить ещё
-              </button>
-
-              <div class="catalog-pagination">
-                <button class="pagination-button-early">
-                  Назад
-                </button>
-
-                <ul class="pagination-list">
-                  <li class="pagination-item">
-                    1
-                  </li>
-                  <li class="pagination-item">
-                    2
-                  </li>
-                  <li class="pagination-item">
-                    3
-                  </li>
-                  <li class="pagination-item">
-                    ...
-                  </li>
-                  <li class="pagination-item">
-                    15
-                  </li>
-                </ul>
-
-                <button class="pagination-button-next">
-                  Вперёд
-                </button>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </section>
-      </div>
+          </section>
 
     </main>
 

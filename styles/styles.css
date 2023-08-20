@@ -38,10 +38,13 @@ img {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+
   margin: 0;
   padding: 0;
 
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 30px;
@@ -49,7 +52,11 @@ body {
   color: #444;
   background: #FFF;
 
-  min-width: 100%;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 1 auto;
 }
 
 .visually-hidden {
@@ -123,7 +130,7 @@ body {
 }
 
 .input-form-search {
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 20px;
 
@@ -148,7 +155,7 @@ body {
 }
 
 .button-form-search {
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 20px;
 
@@ -271,7 +278,7 @@ body {
 
   color:  #000;
 
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", arial, Helvetica, sans-serif;
   font-size: 18px;
 }
 
@@ -292,7 +299,7 @@ body {
   display: flex;
   justify-content: space-between;
 
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", arial, Helvetica, sans-serif;
   line-height: normal;
   letter-spacing: 3.6px;
   text-transform: uppercase;
@@ -301,7 +308,10 @@ body {
   margin-bottom: 5px;
 
   z-index: 1;
+
+  position: relative;
 }
+
 
 .catalog-navigation-list {
   display: flex;
@@ -329,17 +339,24 @@ body {
 /*Всплывающее окно каталога*/
 
 .catalog-list {
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 34px;
   letter-spacing: normal;
   text-transform: none;
 
-  display: flex;
   gap: 30px;
 
-  margin-top: 20px;
-  z-index: 1;
+  z-index: 2;
+
+
+  position: absolute;
+  padding: 33px 60px 27px 60px ;
+  right: -60px;
+
+  width: 1160px;
+  background: #FFE17F;
+  display: none;
 }
 
 .camera-list-item {
@@ -384,7 +401,7 @@ body {
   top: 34px;
   right: 10px;
 
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", arial, Helvetica, sans-serif;
   font-size: 180px;
   font-weight: 700;
   line-height: 30px;
@@ -397,6 +414,7 @@ body {
   flex-direction: column;
   justify-content: center;
   flex-shrink: 0;
+  z-index: 0;
 }
 
 .watch::after {
@@ -406,7 +424,7 @@ body {
   top: 34px;
   right: 10px;
 
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", arial, Helvetica, sans-serif;
   font-size: 180px;
   font-weight: 700;
   line-height: 30px;
@@ -428,7 +446,7 @@ body {
   top: 34px;
   right: 10px;
 
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", arial, Helvetica, sans-serif;
   font-size: 180px;
   font-weight: 700;
   line-height: 30px;
@@ -459,21 +477,22 @@ body {
 
 .wrapper-discription {
   margin-top: 121px;
-  z-index: 1;
 }
 
 .wrapper-discription p {
   margin: 0;
 }
 
-.wrapper-discription .slogan {
-  font-family: "Raleway", sans-serif;
+.slogan {
+  font-family: "Raleway", arial, Helvetica, sans-serif;
   font-size: 50px;
   line-height: 50px;
 
   margin-bottom: 29px;
 
   color: #000;
+  z-index: 1;
+  position: relative;
 }
 
 .wrapper-discription .subtext {
@@ -481,25 +500,43 @@ body {
 }
 
 .more {
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", arial, Helvetica, sans-serif;
   font-size: 18px;
   color: #000;
 
   letter-spacing: 3.6px;
   text-transform: uppercase;
-
-  background: linear-gradient(
-    rgba(255, 255, 255, 1) 0% 45%,
-    rgba(255, 225, 127, 1) 45% 55%,
-    rgba(255, 255, 255, 1) 55% 100%);
+  background-color: inherit;
 
   padding: 10px 5px;
   margin-bottom: 50px;
   border: none;
 }
 
-.button-style:hover {
-  background: rgba(255, 225, 127, 1);
+
+.button-style {
+  position: relative;
+  z-index: 1;
+}
+
+.button-style::after {
+  position: absolute;
+  content: " ";
+
+  width: 100%;
+  height: 8px;
+
+  background-color: rgba(255, 225, 127, 1);
+  top: 50%;
+  right: 0;
+  z-index: -1;
+  transform: translateY(-50%);
+  transition: 300ms ease-out;
+
+}
+
+.button-style:hover::after {
+  height: 100%;
 }
 
 .button-style:active  {
@@ -558,7 +595,7 @@ body {
   width: 1160px;
 
   list-style: none;
-
+  z-index: 2;
 }
 
 .main-catalog-list a {
@@ -598,7 +635,7 @@ body {
 
   color:  #000;
 
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", arial, Helvetica, sans-serif;
 
   font-size: 18px;
   font-style: normal;
@@ -626,7 +663,6 @@ body {
   margin-left: auto;
 
   display: flex;
-  position: relative;
 }
 
 .services-active {
@@ -635,6 +671,10 @@ body {
 
 .services-disabled {
   display: none;
+}
+
+.services-images {
+  position: relative;
 }
 
 .delivery:before {
@@ -715,7 +755,7 @@ body {
 
   display: inline-block;
 
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 800;
 
@@ -727,27 +767,7 @@ body {
   flex-shrink: 0;
 
   border: none;
-}
-
-.delivery-button {
-  background: linear-gradient(
-    rgba(255, 255, 255, 1) 0% 40%,
-    rgba(255, 225, 127, 1) 40% 60%,
-    rgba(255, 255, 255, 1) 60% 100%);
-}
-
-.guarantee-button {
-  background: linear-gradient(
-    rgba(240, 240, 240, 1) 0% 40%,
-    rgba(255, 225, 127, 1) 40% 60%,
-    rgba(240, 240, 240, 1) 60% 100%);
-}
-
-.credit-button {
-  background: linear-gradient(
-    rgba(240, 240, 240, 1) 0% 40%,
-    rgba(255, 225, 127, 1) 40% 60%,
-    rgba(240, 240, 240, 1) 60% 100%);
+  background-color: inherit;
 }
 
 .services-text {
@@ -761,8 +781,6 @@ body {
 
   font-family: "Raleway", sans-serif;
   font-size: 50px;
-  font-style: normal;
-  font-weight: 800;
   line-height: 50px;
 
   color: rgba(0, 0, 0, 1);
@@ -833,7 +851,7 @@ body {
   width: 910px;
   color: #000;
 
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", arial, Helvetica, sans-serif;
   font-size: 20px;
 
   letter-spacing: 4px;
@@ -885,6 +903,7 @@ body {
   display: flex;
   gap: 30px;
   flex-direction: column;
+  color: #444;
 }
 
 .about {
@@ -896,13 +915,15 @@ body {
 }
 
 .about-title {
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", arial, Helvetica, sans-serif;
   font-size: 50px;
   line-height: 50px;
 
   margin: 0;
   padding-top: 47px;
   margin-bottom: 18px;
+
+  color: #000;
 }
 
 .about-text {
@@ -928,7 +949,7 @@ body {
 }
 
 .transportation-list-item {
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", arial, Helvetica, sans-serif;
   font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.36px;
@@ -936,18 +957,13 @@ body {
 
 .button-about-general {
   text-align: center;
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", arial, Helvetica, sans-serif;
   line-height: normal;
   letter-spacing: 3.6px;
   text-transform: uppercase;
   text-decoration: none;
 
   padding: 10px 6px;
-
-  background: linear-gradient(
-    rgba(255, 255, 255, 1) 0% 45%,
-    rgba(255, 225, 127, 1) 45% 60%,
-    rgba(255, 255, 255, 1) 55% 100%);
 }
 
 .button-about {
@@ -1006,7 +1022,7 @@ body {
 
 .subscribtion-title {
   width: 350px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", arial, Helvetica, sans-serif;
   font-size: 50px;
   line-height: 50px;
   color: #000;
@@ -1036,7 +1052,7 @@ body {
   border-bottom: 3px solid rgba(196, 196, 196, 1);
   background-color: inherit;
 
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", arial, Helvetica, sans-serif;
   font-size: 18px;
   line-height: 30px;
 
@@ -1061,7 +1077,7 @@ body {
   width: 253px;
 
   color: #000;
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", arial, Helvetica, sans-serif;
   font-size: 18px;
   letter-spacing: 3.6px;
   text-transform: uppercase;
@@ -1135,6 +1151,22 @@ body {
   width: 240px;
   margin: 0;
   margin-right: 112px;
+  position: relative;
+}
+
+.copyright::before {
+  position: absolute;
+  content: "";
+
+
+  width: 80px;
+  height: 7px;
+
+  display: block;
+  border-bottom: 7px solid rgba(255, 199, 0, 1);
+  top: 120px;
+
+  z-index: 1;
 }
 
 .footer-services-list {
@@ -1146,7 +1178,7 @@ body {
   margin: 0;
   margin-right: 180px;
 
-  font-family:"Raleway", sans-serif;
+  font-family:"Raleway", arial, Helvetica, sans-serif;
   font-size: 18px;
   line-height: normal;
   letter-spacing: 3.6px;
@@ -1277,8 +1309,9 @@ body {
 
   background-color: rgba(240, 240, 240, 0.90);
 
-  display: flex;
+
   z-index: 2;
+  display: none;
 }
 
 .modal-closed-button {
@@ -1312,7 +1345,7 @@ body {
   color: #000;
 
 
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 20px;
 }
@@ -1321,7 +1354,7 @@ body {
   margin: 0;
   color: #000;
 
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", arial, Helvetica, sans-serif;
   font-size: 50px;
   font-weight: 800;
   line-height: 50px;
@@ -1358,7 +1391,7 @@ body {
   padding: 20px;
   box-sizing: border-box;
 
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 20px;
   background: #F0F0F0;
@@ -1379,7 +1412,7 @@ body {
   padding: 20px;
   box-sizing: border-box;
 
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 20px;
   background: #F0F0F0;
@@ -1395,15 +1428,11 @@ body {
 
   padding: 5px 10px;
 
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", arial, Helvetica, sans-serif;
   font-size: 18px;
   letter-spacing: 3.6px;
   text-transform: uppercase;
-
-  background: linear-gradient(
-    rgba(255, 255, 255, 1) 0% 45%,
-    rgba(255, 225, 127, 1) 45% 65%,
-    rgba(255, 255, 255, 1) 65% 100%);
+  background-color: inherit;
 }
 
 .wrapper-need-deliver {
@@ -1433,7 +1462,7 @@ body {
   box-sizing: border-box;
   background: #f2f2f2;
 
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 20px;
 }
@@ -1448,7 +1477,7 @@ body {
 
 
 .tooltip {
-  position: absolute;
+  position: relative;
   margin-top: 4px;
   margin-left: 2px;
   width: 16px;
@@ -1461,11 +1490,15 @@ body {
   padding: 0;
   margin: 0;
 
-  top: 6px;
-  left: 390px;
+  width: 26px;
+  height: 26px;
+
+  top: -5px;
+  left: 5px;
 
   border: none;
-  background-color: transparent;
+  background-color: #FFE17F;
+  border-radius:20px;
 
   display: block;
 }
@@ -1474,35 +1507,278 @@ body {
 .tooltip-text {
   position: absolute;
 
-  font-weight: 400;
   font-size: 16px;
-  line-height: 20px;
 
-  font-family: "PT sans" sans-serif;
-
-
-  width: 256px;
+  width: 200px;
+  height: 160px;
 
   margin: 0;
-  padding: 15px 18px 18px 22px;
+  padding: 19px 17px 0 19px;
 
-  top: 50px;
-  left: 276px;
+  top: 30px;
+  right: -65px;
 
   color: #ffffff;
 
   box-sizing: border-box;
 
-  border-radius: 10px;
-  background:  #333;
-  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.30);
+  background: #000;
+  box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.10);
 
   z-index: 1;
 
-  display: none;
+ display: none;
 }
 
 .tooltip-toggle:hover + .tooltip-text,
 .tooltip-toggle:focus + .tooltip-text {
   display: block;
+}
+
+
+/*catalog*/
+
+.catalog-header-style {
+  padding-bottom: 36px;
+  margin-bottom: 35px;
+}
+
+.catalog-header {
+  width: 1080px;
+  margin-right: auto;
+  margin-left: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  margin-bottom: 34px;
+}
+
+.catalog-header-title {
+  color: #000;
+
+  margin: 0;
+
+  font-family: "Raleway", arial, Helvetica, sans-serif;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.breadcrumbs-list {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+
+  font-size: 16px;
+  line-height: 20px;
+
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs-list-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.wrapper-catalog-inner {
+  background-color: #F0F0F0;
+}
+
+.container-catalog {
+  width: 1160px;
+  margin-right: auto;
+  margin-left: auto;
+
+  display: flex;
+}
+
+/*фильтры*/
+
+.catalog-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.filter {
+  width: 320px;
+}
+
+.catalog-title {
+  margin: 0;
+  color: #000;
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+  line-height: 19px;
+}
+
+.catalog-filter-group {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-filter-title {
+  padding-top: 12px;
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.36px;
+
+  position: relative;
+}
+
+.catalog-filter-title::after {
+  content: " ";
+
+  width: 200px;
+  height: 2px;
+
+  top: 0;
+  position: absolute;
+  display: block;
+  border-top: 2px solid #000;
+  z-index: 1;
+}
+
+.filter-list {
+  padding-left: 36px;
+  margin: 0;
+  list-style: none;
+
+  font-size: 16px;
+  line-height: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-list-checkbox {
+  gap: 17px;
+}
+
+.filter-list-radio {
+  gap: 20px;
+}
+
+.catalog-title-style {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.container-sorting {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.button-show {
+  width: 210px;
+
+  padding: 10px 5px;
+
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+
+  border: none;
+}
+
+/*поле с товарами*/
+
+.container-item {
+  width: 840px;
+}
+
+.wrapper-self-catalog {
+  padding: 70px 40px 78px;
+  background: #FFF;
+}
+
+.catalog-items {
+  margin-bottom: 44px;
+}
+
+.catalog-list-inner {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.catalog-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  width: 360px;
+}
+
+.wrapper-catalog-images {
+  width: 360px;
+}
+
+.container-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-name {
+  margin: 0;
+  padding: 0;
+
+  color:#000;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.36px;
+}
+
+.item-price {
+  margin: 0;
+  padding: 0;
+
+  line-height: normal;
+}
+
+.button-more {
+  margin-bottom: 44px;
+}
+
+.catalog-pagination {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.pagination-list {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+.pagination-item {
+  list-style: none;
+}
+
+/*страница модального окна*/
+
+
+.modal-inner {
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 100px;
 }
