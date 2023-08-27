@@ -10,7 +10,7 @@
 
     <header class="main-header catalog-header-style">
 
-      <a class="heaeder-logo" href="index.html">
+      <a class="header-logo logo-style" href="index.html">
         <svg width="145" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M27.22 0v35.3h-7.6v-2.4c-1.7 1.9-4.1 3.1-7.51 3.1C5.5 36 0 30.2 0 22.7 0 15.2 5.5 9.4 12.1 9.4c3.41 0 5.91 1.2 7.51 3.1V0h7.6Zm-7.6 22.7c0-3.8-2.5-6.2-6.01-6.2-3.5 0-6 2.4-6 6.2 0 3.8 2.5 6.2 6 6.2 3.5-.1 6-2.4 6-6.2ZM43.73 29.2c2.1 0 3.8-.8 4.8-1.9l6.1 3.5c-2.5 3.4-6.2 5.2-11 5.2-8.6 0-14.01-5.8-14.01-13.3 0-7.5 5.4-13.3 13.4-13.3 7.41 0 12.82 5.7 12.82 13.3 0 1.1-.1 2.1-.3 3H37.63c1 2.6 3.3 3.5 6.1 3.5Zm4.6-9.1c-.8-2.9-3.1-4-5.4-4-2.9 0-4.8 1.4-5.5 4h10.9ZM82.16 10.1l-9.31 25.2h-8.6l-9.31-25.2h8.4l5.3 16 5.31-16h8.2ZM83.46 10.1h7.6v25.2h-7.6V10.1ZM93.67 22.7c0-7.5 5.7-13.3 13.4-13.3 4.9 0 9.21 2.6 11.41 6.5l-6.6 3.8c-.9-1.8-2.7-2.8-4.9-2.8-3.3 0-5.71 2.4-5.71 5.8 0 3.5 2.4 5.8 5.7 5.8 2.2 0 4.1-1.1 4.9-2.8l6.61 3.8c-2.1 3.9-6.4 6.5-11.4 6.5-7.71 0-13.41-5.8-13.41-13.3ZM132.9 29.2c2.1 0 3.8-.8 4.8-1.9l6.1 3.5c-2.5 3.4-6.2 5.2-11 5.2-8.61 0-14.02-5.8-14.02-13.3 0-7.5 5.5-13.3 13.41-13.3 7.4 0 12.81 5.7 12.81 13.3 0 1.1-.1 2.1-.3 3h-17.91c1 2.6 3.3 3.5 6.1 3.5Zm4.7-9.1c-.8-2.9-3.1-4-5.4-4-2.91 0-4.81 1.4-5.51 4h10.9Z" fill="#000"/>
           <path d="M83.46 0v10.1L91.06 0h-7.6Z" fill="#510094"/>
@@ -24,7 +24,7 @@
 
         <form class="form-search" action="https://echo.htmlacademy.ru/" method="get">
           <input class="input-form-search" name="s" placeholder="Поиск по сайту" type="search">
-          <button class="button-form-search" type="submit">Найти</button>
+          <button class="button-form-search pointer" type="submit">Найти</button>
         </form>
 
         <nav class="login-menu">
@@ -32,12 +32,12 @@
           <ul class="users-menu">
 
             <li class="users-menu-item">
-              <a class="users-menu-point login" href="#">
+              <a class="users-menu-point style login" href="#">
                 Коля Петухов
               </a>
             </li>
             <li class="users-menu-item">
-              <a class="users-menu-point logout" href="#">
+              <a class="logout style" href="#">
                 Выйти
               </a>
             </li>
@@ -51,14 +51,14 @@
           <ul class="users-buy-list">
 
             <li class="users-buy-item">
-              <a class="compare" href="#">
+              <a class="users-buy-point compare style" href="#">
                 Сравнить
               </a>
             </li>
-            <li class="users-buy-item">
-              <span class="basket">
+            <li class="users-buy-item pointer">
+              <button class="users-buy-point basket style pointer" type="button">
                 Корзина
-              </span>
+              </button>
             </li>
 
           </ul>
@@ -68,23 +68,14 @@
       </div>
 
       <nav class="catalog-navigation">
+
         <div class="wrapper-catalog">
 
-          <span class="">
-            Каталог товаров
-          </span>
-          <button class="button-open-catalog" type="button" id="button">
-            <span class="visually-hidden">
-                Открыть Каталог
-            </span>
-          </button>
-          <button class="button-closed-catalog" type="button">
-            <span class="visually-hidden">
-              Закрыть Каталог
-            </span>
+          <button class="button-open-catalog pointer catalog-navigation-point catalog-navigation-button" type="button">
+              Каталог товаров
           </button>
 
-            <div class="catalog-list">
+          <div class="catalog-list">
 
               <ul class="camera-list">
                 <li class="camera-list-item">
@@ -130,6 +121,7 @@
               </ul>
 
           </div>
+
         </div>
 
         <ul class="catalog-navigation-list">
@@ -177,17 +169,17 @@
                 </label>
 
                 <label class="delivery-data-item e-mail">
-                  <span class="delivery-data-subtitle">
+                  <span class="delivery-data-subtitle delivery-data-input-style">
                     Ваш e-mail:
                   </span>
-                  <input class="delivery-data-input style-outline" placeholder="почта" name="e-mail" type="email">
-                  <span class="error" style="display: none;">
+                  <input class="delivery-data-input error" placeholder="почта" name="e-mail" type="email">
+                  <span class="error-text">
                     Забавный у вас адрес
                   </span>
                 </label>
 
               </div>
-
+              
               <div class="wrapper-need-deliver">
 
                 <label class="delivery-data-item need-deliver">
@@ -205,7 +197,7 @@
                         Количество:
                       </span>
                       <span class="tooltip">
-                        <button class="tooltip-toggle" type="button" aria-labelledby="baggage">
+                        <button class="tooltip-toggle catalog-navigation-point" type="button" aria-labelledby="baggage">
                           i
                         </button>
                         <span class="tooltip-text" role="tooltip" id="baggage">
@@ -215,13 +207,9 @@
                     </label>
 
                     <div class="need-deliver-value">
-                      <button class="need-deliver-value-button" type="button">
-
-                      </button>
+                      <button class="need-deliver-value-button need-deliver-minus catalog-navigation-point" type="button"></button>
                       <input type="number" value="1" class="quantity" name="order-value">
-                      <button class="need-deliver-value-button" type="button">
-
-                      </button>
+                      <button class="need-deliver-value-button need-deliver-plus catalog-navigation-point" type="button"></button>
                     </div>
                   </div>
 

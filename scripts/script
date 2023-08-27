@@ -7,37 +7,8 @@
         document.querySelector('.modal-container').style.display = "none";
       });
 
+      const button = document.querySelector('button-open-catalog');
 
-
-      document.querySelector('.button-open-catalog').addEventListener('click', ()=> {
-        document.querySelector('.catalog-list').style.display = "flex";
-      });
-
-
-     document.querySelector('.button-closed-catalog').addEventListener('click', ()=> {
-        document.querySelector('.catalog-list').style.display = "none";
-      });
-
-    /*
-      let catalog = querySelector('catalog-list')
-
-      function openbox(catalog){
-        display = document.getElementById(catalog).style.display;
-
-        if(display=='none'){
-           document.getElementById(catalog).style.display='block';
-        }else{
-           document.getElementById(catalog).style.display='none';
-        }
-    }
-    */
-
-      let button = document.getElementById("button");
-          button.onclick = button_click;
-
-      function button_click() {
-        let myDetails = document.getElementById("list");
-        myDetails.open = !myDetails.open;
-        button.textContent = button.textContent === "Открыть" ? "Закрыть" : "Открыть";
-      }
-
+      button.addEventListener('click', () => {
+        button.classList.toggle('active')
+      })
