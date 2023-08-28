@@ -7,7 +7,7 @@
         document.querySelector('.modal-container').style.display = "none";
       });
 
-      const button = document.querySelector('button-open-catalog');
+      const button = document.querySelector('.button-open-catalog');
 
       button.addEventListener('click', () => {
         button.classList.toggle('active')
